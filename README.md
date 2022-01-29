@@ -32,3 +32,14 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 * Under theme library click on `Add theme` and select `Upload zip file`
 * Select the zip file you downloaded and wait for it to be added to your themes.
 * You can now go ahead and customize your theme
+
+
+## Authors
+
+- [Adrian Etenyi](https://www.github.com/nairdaee)
+
+
+## License
+
+[MIT](https://github.com/nairdaee/Shopify-2.0-Skeleton-Theme/blob/main/LICENSE)
+
