@@ -33,6 +33,47 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 * Select the zip file you downloaded and wait for it to be added to your themes.
 * You can now go ahead and customize your theme
 
+## Usage/Examples
+
+####  Creating sections:
+* First go to the `sections` folder and create the section you want inside i.e `example.liquid`
+* Inside the .liquid file you have just created add the following code(ensure that the sections.`example`.name matches your file name):
+```liquid
+{% schema %}
+{
+  "name": "t:sections.example.name",
+  "tag": "section",
+  "class": "section"
+}
+{% endschema %}
+```
+* If the section you are creating is static(no dynamic content will be added later). Then the schema is not required. Instead you'll manually extend inside the `layout/theme.liquid` file like shown below:
+
+```html
+<body>
+<!-- Ensure the section is inside the body tag -->
+{% section 'example' %}
+</body>
+```
+* If your sections are dynamic then we need to add them to the `templates/` under `"sections"` for the template you want your section to be in. For example, if you want to add the section ot the index page. Inside the `index.json`, under sections, add the following code:
+```
+"example": {
+      "type": "example"
+    }
+```
+
+####  Adding your styles:
+* Now you'll need to add your css. This is achieved by adding a `.css` file inside the `assets/` folder. In our case, it will be called `example.css`
+* To import it into our `.liquid` section file. We use the following code at the very top of our .liquid file:
+```
+{{ 'example.css' | asset_url | stylesheet_tag }}
+```
+* For inline styles, you can use the styles tag i.e:
+```css
+{% style %}
+/* Add your styles here */
+{% endstyle %}
+```
 
 ## Authors
 
