@@ -47,7 +47,7 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 }
 {% endschema %}
 ```
-* If the section you are creating is static(no dynamic content will be added later). Then the schema is not required. Instead you'll manually extend inside the `layout/theme.liquid` file like shown below:
+* If the section you are creating is static(no dynamic content will be added later, mostly used for announcement bars, navbars and footers). Then the schema is not required. Instead you'll manually extend inside the `layout/theme.liquid` file like shown below:
 
 ```html
 <body>
