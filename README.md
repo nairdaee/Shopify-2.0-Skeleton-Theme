@@ -77,6 +77,7 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 <!-- no comma at the end if there's only one item -->
     "editorial"
 ```
+* You can now see your page when you do a `shopify theme serve` and go to the url `/editorial`
 
 ####  Adding your styles:
 * Now you'll need to add your css. This is achieved by adding a `.css` file inside the `assets/` folder. In our case, it will be called `editorial.css`
