@@ -33,15 +33,15 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 * Select the zip file you downloaded and wait for it to be added to your themes.
 * You can now go ahead and customize your theme
 
-## Usage/Examples
+## Usage/editorials
 
 ####  Creating sections:
-* First go to the `sections` folder and create the section you want inside i.e `example.liquid`
-* Inside the .liquid file you have just created add the following code(ensure that the sections.`example`.name matches your file name):
+* First go to the `sections` folder and create the section you want inside i.e `editorial.liquid`
+* Inside the .liquid file you have just created add the following code(ensure that the sections.`editorial`.name matches your file name):
 ```liquid
 {% schema %}
 {
-  "name": "t:sections.example.name",
+  "name": "t:sections.editorial.name",
   "tag": "section",
   "class": "section"
 }
@@ -52,21 +52,37 @@ This is a starter theme structure for devs wanting to code Shopify 2.0 themes fr
 ```html
 <body>
 <!-- Ensure the section is inside the body tag -->
-{% section 'example' %}
+{% section 'editorial' %}
 </body>
 ```
-* If your sections are dynamic then we need to add them to the `templates/` under `"sections"` for the template you want your section to be in. For example, if you want to add the section ot the index page. Inside the `index.json`, under sections, add the following code:
+* If your sections are dynamic then we need to add them to the `templates/`. For example, if you want to add the editorial page. First create a new file called `editorial.json` under the `templates/` folder and add the following:
+```html
+{
+  "sections": {},
+  "order": []
+}
+
 ```
-"example": {
-      "type": "example"
+
+* Inside the `editorial.json`, under sections, add the following code:
+```html
+"editorial": {
+  <!-- no comma at the end if there's only one item -->
+      "type": "editorial"
     }
 ```
 
+* Lastly, under `"order"` add:
+```html
+<!-- no comma at the end if there's only one item -->
+    "editorial"
+```
+
 ####  Adding your styles:
-* Now you'll need to add your css. This is achieved by adding a `.css` file inside the `assets/` folder. In our case, it will be called `example.css`
+* Now you'll need to add your css. This is achieved by adding a `.css` file inside the `assets/` folder. In our case, it will be called `editorial.css`
 * To import it into our `.liquid` section file. We use the following code at the very top of our .liquid file:
 ```
-{{ 'example.css' | asset_url | stylesheet_tag }}
+{{ 'editorial.css' | asset_url | stylesheet_tag }}
 ```
 * For inline styles, you can use the styles tag i.e:
 ```css
